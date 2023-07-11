@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+
+:root {
+    --textColor: #1A1A1B;
+    --authorColor: #787C7E;
+
+    --upvoteColor: #FF4500;
+    --downvoteColor: #7193FF;
+
+    --maxPostWidth: {% max_post_width %}px;
+    --maxCommentWidth: {% max_comment_width %}px;
+    --imageSize: 28px;
+}
+
+* {
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    color: var(--textColor);
+}
+
+body {
+    background-color: #FFF;
+}
+
+
+
+/* Wrappers */
+
+.post, .comment {
+    display: flex;
+
+    /* Border for image formatting */
+    padding: 3px;
+    border: 1px solid rgb(255, 0, 0);
+
+    align-items: center;
+    justify-content: center;
+}
+
+.post {
+    max-width: var(--maxPostWidth);
+
+    flex-direction: row;
+}
+
+.comment {
+    max-width: var(--maxCommentWidth);
+
+    flex-direction: column;
+    align-items: start;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: left;
+}
+
+.post .content {
+    margin-left: 15px;
+}
+
+/* Content */
+
+.author {
+    color: var(--authorColor);
+}
+
+.comment .author {
+    font-size: 14px;
+}
+
+.author-wrapper {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-title {
+    margin: 0;
+
+    font-size: 1.5em;
+}
+
+.crop-avatar {
+    width: 28px;
+    height: 28px;
+
+    margin-right: 8px;
+
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.crop-avatar img {
+    width: 28px;
+    height: 28px;
+}
+
+.text {
+    margin-top: 5px;
+    margin-left: calc(var(--imageSize) + 8px);
+}
+
+/* Points wrapper */
+
+.points {
+    display: flex;
+}
+
+.post .points {
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.comment .points {
+    flex-direction: row;
+
+    margin-top: 5px;
+    margin-left: calc(var(--imageSize) + 8px);
+
+    justify-content: center;
+}
+
+/* Upvotes & Downvotes */
+
+.net-points {
+    font-size: 16px;
+}
+
+.post .net-points {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.comment .net-points {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.upvote, .downvote {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.upvote-arrow, .downvote-arrow {
+    width: 0;
+    height: 0;
+}
+
+.upvote-arrow {
+    border-bottom: 8px solid var(--upvoteColor);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+.downvote-arrow {
+    border-top: 8px solid var(--downvoteColor);
+    border-left: 7px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+.upvote-tail, .downvote-tail {
+    width: 5px;
+    height: 6px;
+}
+
+.upvote-tail {
+    background-color: var(--upvoteColor);
+}
+
+.downvote-tail {
+    background-color: var(--downvoteColor);
+}

@@ -1,0 +1,37 @@
+<div class="comment">
+
+    <!-- Content -->
+
+    <div class="content">
+
+        <div class="author-wrapper">
+            <div class="crop-avatar">
+                <img class="avatar" src="{% abs_path %}/media/avatars/default_{% avatar_index %}.png" alt="Reddit default avatar {% picture_index %}">
+            </div>
+
+            <span class="author">u/{% author %}</span>
+        </div>
+
+        <span class="text">{% body %}</span>
+
+    </div>
+
+    <!-- Upvotes -->
+
+    <div class="points">
+
+        <div class="upvote">
+            <div class="upvote-arrow"></div>
+            <div class="upvote-tail"></div>
+        </div>
+
+        <span class="net-points">{% net_votes %}</span>
+
+        <div class="downvote">
+            <div class="downvote-tail"></div>
+            <div class="downvote-arrow"></div>
+        </div>
+
+    </div>
+
+</div>

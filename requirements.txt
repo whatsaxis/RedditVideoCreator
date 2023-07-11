@@ -1,0 +1,7 @@
+opencv-python~=4.8.0.74
+moviepy~=1.0.3
+requests~=2.31.0
+gTTS~=2.3.2
+pydub~=0.25.1
+Pillow~=9.5.0
+html2image~=2.0.3
